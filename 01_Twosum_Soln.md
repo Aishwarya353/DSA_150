@@ -1,4 +1,5 @@
 https://leetcode.com/problems/two-sum/submissions/1806511354/
+
 https://neetcode.io/problems/two-integer-sum?list=neetcode150
 
 **Description**
@@ -30,6 +31,11 @@ Constraints:
 -109 <= nums[i] <= 109
 -109 <= target <= 109
 Only one valid answer exists.
+
+For Unsorted : Hashing
+For Sorted : Two Pointer approach
+
+**If Unsorted**
 
 **Python**
 
@@ -65,3 +71,55 @@ Only one valid answer exists.
             return new int[] {-1,-1};
         }
     }
+
+
+**If Sorted**
+Make sure both positive and negative numbers are sorted
+
+**C#**
+
+    public class Solution {
+        public int[] TwoSum(int[] nums, int target) {
+            int left = 0;
+            int right = nums.Length-1;
+            while(left < right)
+            {
+                int sums = nums[left] + nums[right];
+                if(sums < target)
+                {
+                    left = left + 1;
+                }
+                else if (sums > target)
+                {
+                    right = right -1;
+                }
+                else
+                {
+                    return new int[] {left,right};
+                }
+            }
+            return new int[] {-1,-1};
+        }
+    }
+
+
+**Python**
+
+     class Solution:
+         def twoSum(self, nums: List[int], target: int) -> List[int]:
+             right = len(nums)-1
+             left = 0
+             while(left < right):
+                 print("one",left)
+                 print("two",right)
+                 sums = nums[left] + nums[right]
+                 if target <  sums:
+                     print("if")
+                     right = right - 1
+                 elif target > sums:
+                     print("elif")
+                     left = left + 1
+                 else:
+                     print("else")
+                     return [left,right]
+             return [-1,-1]
