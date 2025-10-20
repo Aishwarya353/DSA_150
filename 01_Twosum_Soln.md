@@ -32,8 +32,8 @@ Constraints:
 -109 <= target <= 109
 Only one valid answer exists.
 
-For Unsorted : Hashing
-For Sorted : Two Pointer approach
+**For Unsorted : Hashing
+For Sorted : Two Pointer approach**
 
 **If Unsorted**
 
@@ -123,3 +123,72 @@ Make sure both positive and negative numbers are sorted
                      print("else")
                      return [left,right]
              return [-1,-1]
+
+
+---
+
+**GPT's Insights**
+
+## 🔍 Problem Recap: Two Sum
+
+### Input:
+
+* A list of integers `nums`
+* A target integer `target`
+
+### Output:
+
+* Indices of **two numbers** that sum up to `target`
+* Only **one valid pair exists**
+* **Do not use the same element twice**
+
+---
+
+## ✅ When to Use What:
+
+| Situation      | Approach     | Time | Space |
+| -------------- | ------------ | ---- | ----- |
+| Unsorted Input | Hash Map     | O(n) | O(n)  |
+| Sorted Input   | Two Pointers | O(n) | O(1)  |
+
+---
+
+## 🧠 1. **Unsorted Input → Use Hash Map**
+
+### 🔑 Key Insight:
+
+* Store each number and its index in a hash map
+* For every new number, check if its "pair" (target - num) was already seen
+* Return indices when found
+
+---
+
+## 🧠 2. **Sorted Input → Use Two Pointers**
+
+### 🔑 Key Insight:
+
+* Move `left` and `right` toward each other
+* If the current sum is **too small**, increase `left`
+* If the sum is **too large**, decrease `right`
+* If it's **perfect**, return the indices
+
+---
+
+## ⚠️ Common Mistakes to Watch Out For:
+
+* 🔁 Starting `right = len(nums)` instead of `len(nums)-1`
+* 🔄 Reversing `left` and `right` movement logic
+* 🧠 Not checking if the input is **actually sorted** before using two pointers
+* 😅 Forgetting to update hash map after checking in the hash map solution
+
+✅ **Repeat this pattern** on a few more problems:
+
+* [Two Sum II (LeetCode 167)](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) (sorted input)
+* [3Sum](https://leetcode.com/problems/3sum/) (Two Pointers inside a loop)
+* [4Sum](https://leetcode.com/problems/4sum/) (Advanced)
+
+✅ Add this to your **DSA Pattern Notebook** under:
+
+* Pattern: **Two Pointers**
+* Sub-pattern: **Two Sum on sorted array**
+* Key trick: Shrinking window from both ends
