@@ -35,3 +35,15 @@ If you like, I can also pull **2‑3 more “easy view” resources** (10‑15�
 
 [1]: https://www.designgurus.io/blog/system-design-tutorial-for-beginners?utm_source=chatgpt.com "System Design Tutorial for Beginners (2025) – Learn Concepts, Patterns & Interview Skills"
 [2]: https://medium.com/%40shivambhadani_/system-design-for-beginners-everything-you-need-in-one-article-c74eb702540b?utm_source=chatgpt.com "System Design For Beginners: Everything You Need in One Article | by Shivam Bhadani | Medium"
+
+
+**Keywords** 
+
+Low Level Design
+High Level Design
+Horizontal Scaling
+Vertical Scaling
+Load Balancing
+Consistent Hashing
+Multiple Hash Function
+Skewed Distribution
