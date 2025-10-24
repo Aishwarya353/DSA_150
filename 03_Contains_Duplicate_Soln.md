@@ -1,6 +1,6 @@
 https://leetcode.com/problems/contains-duplicate/description/
 
-https://neetcode.io/problems/duplicate-integer?list=neetcode150
+https://neetcode.io/problems/duplicate-integer?list=neetcode150 --> See hashset length solution else see the end of the page 
 
 **Contains Duplicate**
 Solved 
@@ -52,6 +52,11 @@ Output: false
                 else:
                     dicts[i] = 1
             return False
+
+TC : O(n)
+SC : O(n)
+
+Note : Try using hashset instead of dictionary, COZ dictionary makes no sense here
 
 ----
 
@@ -123,3 +128,21 @@ So:
         return false;
     }
 }
+
+----
+
+**Mindblowing one** 
+
+**Python**
+
+        class Solution:
+            def hasDuplicate(self, nums: List[int]) -> bool:
+                return len(set(nums)) < len(nums)
+
+**C#**
+
+        public class Solution {
+            public bool hasDuplicate(int[] nums) {
+                return new HashSet<int>(nums).Count < nums.Length;
+            }
+        }
