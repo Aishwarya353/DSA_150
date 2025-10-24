@@ -26,6 +26,7 @@ Output: false
 
 **C#**
 
+```C#
     public class Solution {
         public bool ContainsDuplicate(int[] nums) {
             Dictionary<int,int> dict = new Dictionary<int,int>();
@@ -40,9 +41,10 @@ Output: false
                     dict[nums[i]] = 1;
                 }
             }
+```
 
 **Python**
-
+```python
     class Solution:
         def containsDuplicate(self, nums: List[int]) -> bool:
             dicts = {}
@@ -52,6 +54,7 @@ Output: false
                 else:
                     dicts[i] = 1
             return False
+```
 
 TC : O(n)
 SC : O(n)
