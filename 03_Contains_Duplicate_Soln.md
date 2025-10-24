@@ -135,14 +135,18 @@ So:
 
 **Python**
 
-        class Solution:
-            def hasDuplicate(self, nums: List[int]) -> bool:
-                return len(set(nums)) < len(nums)
+```python
+class Solution:
+    def hasDuplicate(self, nums: List[int]) -> bool:
+        return len(set(nums)) < len(nums)
+```
 
 **C#**
 
-        public class Solution {
-            public bool hasDuplicate(int[] nums) {
-                return new HashSet<int>(nums).Count < nums.Length;
-            }
-        }
+```C#
+public class Solution {
+    public bool hasDuplicate(int[] nums) {
+        return new HashSet<int>(nums).Count < nums.Length;
+    }
+}
+```
