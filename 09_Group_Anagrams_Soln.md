@@ -105,8 +105,8 @@ class Solution:
 **Complexity**
 | Approach                      | Time Complexity         | Space Complexity | Notes                                  |
 | ----------------------------- | ----------------------- | ---------------- | -------------------------------------- |
-| **Sorted-string**             | ( O(N \cdot K \log K) ) | ( O(N \cdot K) ) | Simpler, but slower due to sorting     |
-| **Character-count (hashing)** | ( O(N \cdot K) )        | ( O(N \cdot K) ) | Faster, avoids sorting, fixed alphabet |
+| **Sorted-string**             | ( O(N⋅KlogK) ) | ( O(N⋅K) ) | Simpler, but slower due to sorting     |
+| **Character-count (hashing)** | ( O(N⋅KlogK) )        | ( O(N⋅K) ) | Faster, avoids sorting, fixed alphabet |
 
 
 **GPT's Insights**
