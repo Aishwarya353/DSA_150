@@ -725,3 +725,81 @@ class Solution:
 **Prerequisite:**
 Bucket sort
 Min Heap
+
+
+**Just a Note**
+Great question! “Shadowing” is a common programming term — it means **when a variable inside a smaller scope (like inside a loop or function) uses the same name as a variable in an outer scope**, making the outer variable temporarily hidden (“shadowed”) inside that smaller scope.
+
+---
+
+### Simple example:
+
+```python
+k = 10  # Outer variable
+
+for k in [1, 2, 3]:  # Inner loop variable shadows outer k
+    print(k)
+    
+print(k)  # What’s k here?
+```
+
+**Output:**
+
+```
+1
+2
+3
+3
+```
+
+* Inside the loop, `k` takes values 1, 2, 3 — this is the **inner** `k`.
+* After the loop, `k` is 3 — the last inner value — so the **outer** `k` got shadowed and changed.
+
+---
+
+### In your code:
+
+* Your function has an input parameter `k` (how many top elements to return).
+* But inside the loop, you used `k` again as a loop variable for dictionary keys.
+* That **shadows** the input `k`, so the stop condition:
+
+```python
+if len(result) == k:
+```
+
+doesn't check what you expect.
+
+---
+
+### Why is it important?
+
+Shadowing can cause unexpected bugs because you think you're using one variable, but really it's another with the same name **temporarily hiding** the original.
+
+---
+
+### Best practice:
+
+* Use **different variable names** in different scopes to avoid confusion.
+* Example:
+
+```python
+for num, freq in mapp.items():
+    bucket[freq].append(num)
+```
+
+instead of:
+
+```python
+for k, v in mapp.items():
+    bucket[v].append(k)
+```
+
+---
+
+**Complexities:**
+
+| Method              | Time Complexity | Space Complexity | When it’s good                          |
+| ------------------- | --------------- | ---------------- | --------------------------------------- |
+| Brute-force sorting | O(n log n)      | O(n)             | Small input, easy to code               |
+| Bucket sort         | O(n)            | O(n)             | Large input, k << n, want fast top-k    |
+| Min-heap            | O(n log k)      | O(k)             | Large input, streaming data, want top-k |
