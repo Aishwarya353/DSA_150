@@ -103,6 +103,30 @@ public class Solution {
 
 ```
 
+**Brute in Python**
+```python
+class Solution:
+
+    def encode(self, strs: List[str]) -> str:
+        temp = ""
+        for element in strs:
+            temp = temp + str(len(element)) + '#' + element
+        print(temp)
+        return temp
+    def decode(self, s: str) -> List[str]:
+        result = []
+        i = 0
+        while i < len(s):
+            j = i
+            while s[j]!="#":
+                j+=1
+            length = int(s[i:j])
+            word = s[j+1:j+1+length]
+            result.append(word)
+            i = j + 1 + length
+        return result
+```
+
 Ahhh perfect bro 😎 — now that your code is correct, let’s carefully analyze the **time and space complexity** of your `Encode` and `Decode` methods.
 
 We’ll go **step by step**.
