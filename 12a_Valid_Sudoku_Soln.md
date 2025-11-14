@@ -375,3 +375,106 @@ class Solution:
                 boxes[index].add(board[i][j])
         return True;
 ```
+
+
+----
+
+**Complexity**
+Alright bro 😎 let’s break down **time and space complexity** for both versions:
+
+---
+
+# ✅ 1. Brute Force Approach (checking rows, columns, and each 3×3 box separately)
+
+Brute force does something like:
+
+* Check **all rows** → for each row loop again to check duplicates
+* Check **all columns** → same
+* Check **each 3×3 box** → nested loops inside loops
+
+### ⏱ Time Complexity (Brute)
+
+### **O(9² + 9² + 9²)** → still basically **O(81)** → **O(1)**
+
+> Because the Sudoku board size is fixed (9×9), brute force is still constant time.
+
+But conceptually, brute force does:
+
+* 81 checks for rows
+* 81 checks for columns
+* 81 checks for boxes
+  → 243 checks total
+  Still **constant**, so O(1).
+
+**But logically**, brute is “heavier” than optimized.
+
+---
+
+# 📦 Space Complexity (Brute)
+
+### **O(9)** or **O(1)**
+
+You use at most 9 values in a hash set at one time (for a row, column, or box).
+
+Still constant.
+
+---
+
+# ✅ 2. Optimized Approach (single pass using 27 sets)
+
+This one:
+
+* Traverses the board only **once**
+* Uses 27 sets:
+
+  * 9 row sets
+  * 9 column sets
+  * 9 box sets
+
+### ⏱ Time Complexity (Optimized)
+
+### **O(9×9) = O(81) = O(1)**
+
+Yes bro, still constant, because board size never changes.
+
+But optimized does:
+
+* Only **1 pass**
+* Only **1 lookup per row/col/box**
+
+So constant but **fastest constant**.
+
+---
+
+# 📦 Space Complexity (Optimized)
+
+### **27 sets = max 9 chars each → O(27×9) = O(243) = O(1)**
+
+Still constant, but slightly more memory than brute because brute reuses sets inside loops.
+
+---
+
+# 🥇 Which is better in practice?
+
+* **Optimized wins**
+
+  * Single pass
+  * Cleaner logic
+  * No repeated work
+
+* **Brute is fine** but does:
+
+  * 3 separate passes
+  * More loops
+  * Harder to maintain
+
+---
+
+# Summary Table
+
+| Approach  | Time     | Space    | Notes                            |
+| --------- | -------- | -------- | -------------------------------- |
+| Brute     | **O(1)** | **O(1)** | 3 full scans (rows, cols, boxes) |
+| Optimized | **O(1)** | **O(1)** | Best: single scan, 27 sets       |
+
+-------
