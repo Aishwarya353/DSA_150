@@ -303,4 +303,75 @@ BOXES:  for br in 0..2 → for bc in 0..2 →
 ```
 
 ---
+---
+---
+---
 
+
+**C#**
+```C#
+public class Solution {
+    public bool IsValidSudoku(char[][] board) {
+        List<HashSet<char>> rows = new List<HashSet<char>>();
+        List<HashSet<char>> columns = new List<HashSet<char>>();
+        List<HashSet<char>> boxes = new List<HashSet<char>>();
+        for(int k=0; k<=9-1; k++)
+        {
+            rows.Add(new HashSet<char>());
+            columns.Add(new HashSet<char>());
+            boxes.Add(new HashSet<char>());
+
+        }
+        for(int i=0; i<=8; i++)
+        {
+            for(int j=0; j<=8; j++)
+            {
+                if(board[i][j] == '.')
+                    continue;
+                if(rows[i].Contains(board[i][j]))
+                return false;
+                rows[i].Add(board[i][j]);
+
+                if(columns[j].Contains(board[i][j]))
+                return false;
+                columns[j].Add(board[i][j]);
+
+                int index = (i / 3) * 3 + (j/3);
+                if(boxes[index].Contains(board[i][j]))
+                return false;
+                boxes[index].Add(board[i][j]);
+
+            }
+        }
+        return true;
+    }
+}
+```
+
+**Python**
+```python
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        rows = [set() for _ in range(9)]
+        columns = [set() for _ in range(9)]
+        boxes = [set() for _ in range(9)]
+
+        for i in range(9):
+            for j in range(9):
+                if board[i][j] == '.':
+                    continue
+                if board[i][j] in rows[i]:
+                    return False
+                rows[i].add(board[i][j])
+
+                if board[i][j] in columns[j]:
+                    return False
+                columns[j].add(board[i][j])
+
+                index = (i//3) * 3 + (j//3)
+
+                if board[i][j] in boxes[index]:
+                    return False
+                boxes[index].add(board[i][j])
+        return True;
+```
