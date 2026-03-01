@@ -103,4 +103,12 @@ When asked about prompt engineering, always connect it to **business value**:
 - *“They help integrate AI smoothly into fullstack apps without heavy post‑processing.”*
 
 ---
+1️⃣WHAT IS PROMPT ENGINEERING??
+Prompt engineering is an art of crafting precise, concise and effective questions or set of instructions for LLM models like chatbots and search engines. This skill is crucial in making AI systems work better for various tasks, from answering questions to generating content.
 
+Prompts involve instructions and context passed to a language model to achieve a desired tasks.
+
+➡️Common Use Cases:
+
+Researchers use prompt engineering to improve the capacity of LLMs on a wide range of complex and mathematical tasks and reasoning.
+Developers use prompt engineering to design prompting techniques that interface with LLMs and other tools to help them communicate or solve tasks within.
