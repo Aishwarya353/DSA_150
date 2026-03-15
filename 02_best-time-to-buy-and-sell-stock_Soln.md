@@ -100,3 +100,27 @@ Pattern : Two Pointer and Sliding Window
                 else:
                     left = right
             return max
+
+
+**GPT's Insight**
+Dynamic Programming
+
+```C#
+public class Solution {
+    public int MaxProfit(int[] prices) {
+
+        int minPrice = int.MaxValue;
+        int maxProfit = 0;
+
+        foreach(int price in prices)
+        {
+            if(price < minPrice)
+                minPrice = price;
+            else
+                maxProfit = Math.Max(maxProfit, price - minPrice);
+        }
+
+        return maxProfit;
+    }
+'''
+}
